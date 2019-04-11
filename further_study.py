@@ -171,8 +171,6 @@ def custom_index(input_list, value):
         else:
             i += 1
 
-
-
 def custom_count(input_list, value):
     """Return the number of times value appears in the list.
 
@@ -186,7 +184,17 @@ def custom_count(input_list, value):
 
     """
 
-    return 0
+    i = 0 
+    item_count = 0
+
+    for item in input_list:
+        if item == value:
+            item_count += 1
+            i += 1
+        else:
+            i += 1
+
+    return item_count
 
 
 def custom_reverse(input_list):
@@ -205,7 +213,7 @@ def custom_reverse(input_list):
 
     """
 
-    pass
+    input_list[:] = input_list[-1::-1] 
 
 
 def custom_contains(input_list, value):
@@ -225,7 +233,11 @@ def custom_contains(input_list, value):
 
     """
 
-    return None
+    for item in input_list:
+        if item == value:
+            return True
+    
+    return False 
 
 
 def custom_equality(some_list, another_list):
@@ -244,7 +256,13 @@ def custom_equality(some_list, another_list):
 
     """
 
-    return None
+    i = 0 
+    for item in some_list:
+        if item != another_list[i]:
+            return False
+        i += 1
+
+    return True
 
 
 ##############################################################################
