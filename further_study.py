@@ -82,6 +82,8 @@ def custom_extend(input_list, second_list):
 
     """
 
+    # try without a for loop using the "secret space"
+
     for item in second_list:
         input_list[-1:] = [input_list[-1], item]
         
@@ -126,8 +128,7 @@ def custom_remove(input_list, value):
         if item == value:
             input_list[i:(i+1)] = []
             break
-        else:
-            i += 1
+        i += 1
 
 
 def custom_pop(input_list):
@@ -148,6 +149,7 @@ def custom_pop(input_list):
 
     pop_item = input_list[-1]
     input_list[-1:] = []
+
     return pop_item
 
 
@@ -163,13 +165,13 @@ def custom_index(input_list, value):
         1
 
     """
-    i = 0 
+    index = 0 
 
     for item in input_list:
         if item == value:
-            return i 
-        else:
-            i += 1
+            return index 
+        
+        index += 1
 
 def custom_count(input_list, value):
     """Return the number of times value appears in the list.
@@ -184,15 +186,11 @@ def custom_count(input_list, value):
 
     """
 
-    i = 0 
     item_count = 0
 
     for item in input_list:
         if item == value:
             item_count += 1
-            i += 1
-        else:
-            i += 1
 
     return item_count
 
@@ -239,6 +237,11 @@ def custom_contains(input_list, value):
     
     return False 
 
+#ALTERNATIVE:
+    # if custom_index(input_list,value):
+    #     return True
+    # else:
+    #     return False
 
 def custom_equality(some_list, another_list):
     """Return True if passed lists are identical, False otherwise.
@@ -255,6 +258,8 @@ def custom_equality(some_list, another_list):
         False
 
     """
+
+    #you could start by comparing the lengths and if they're not equal, just return false
 
     i = 0 
     for item in some_list:
